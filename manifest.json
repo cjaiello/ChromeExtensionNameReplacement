@@ -1,0 +1,18 @@
+{
+"manifest_version": 2,
+    "name": "Chadification",
+    "description": "Chadification",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [ "jquery-3.3.1.min.js", "names.js", "content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+          "storage"
+    ]
+}
