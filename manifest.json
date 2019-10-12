@@ -14,5 +14,10 @@
     ],
     "permissions": [
           "storage"
-    ]
+    ],
+    "page_action":
+      {
+        "default_popup": "test.html",
+        "default_title": "Chadification"
+      }
 }

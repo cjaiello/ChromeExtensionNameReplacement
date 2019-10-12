@@ -5,7 +5,7 @@
 const TEXT_NODE_VALUE = 3;
 
 chrome.storage.sync.get(['userEnteredName'], function(result) {
-    var userEnteredName = result["userEnteredName"] != null) ? result["userEnteredName"].toString() : null;
+    var userEnteredName = result["userEnteredName"] != null ? result["userEnteredName"].toString() : null;
     if (userEnteredName == null) {
         var userInput = prompt("Enter a name, and all people's names in Chrome will be replaced with that name!");
         userEnteredName = String(userInput);
