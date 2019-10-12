@@ -3,10 +3,9 @@
 // https://9to5google.com/2015/06/14/how-to-make-a-chrome-extensions/
 
 const TEXT_NODE_VALUE = 3;
-const CHROME_STORAGE_NULL_VALUE = "null";
 
 chrome.storage.sync.get(['userEnteredName'], function(result) {
-    var userEnteredName = result["userEnteredName"] != CHROME_STORAGE_NULL_VALUE ? result["userEnteredName"].toString() : null;
+    var userEnteredName = result["userEnteredName"] != null) ? result["userEnteredName"].toString() : null;
     if (userEnteredName == null) {
         var userInput = prompt("Enter a name, and all people's names in Chrome will be replaced with that name!");
         userEnteredName = String(userInput);
@@ -58,5 +57,5 @@ function replaceNamesWithUserInput(userEnteredName) {
 
 function replaceText(value, userEnteredName) {
     var re = new RegExp("\\b" + value + "\\b");
-    return text.replace(re, userEnteredName);
+    return value.replace(re, userEnteredName);
 }
