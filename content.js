@@ -10,7 +10,7 @@ chrome.storage.sync.get(['userEnteredName'], function(result) {
         var userInput = prompt("Enter a name, and all people's names in Chrome will be replaced with that name!");
         userEnteredName = String(userInput);
         chrome.storage.sync.set({"userEnteredName": userEnteredName}, function(userEnteredName) {
-            if (userEnteredName != CHROME_STORAGE_NULL_VALUE && userEnteredName != null) {
+            if (userEnteredName != null) {
                 replaceNamesWithUserInput(userEnteredName);
             }
         });
