@@ -3,15 +3,15 @@
 // https://9to5google.com/2015/06/14/how-to-make-a-chrome-extensions/
 
 chrome.storage.sync.get(['userEnteredName'], function(result) {
-    var userEnteredName = result["userEnteredName"] != null ? result["userEnteredName"].toString() : null;
-    if (userEnteredName != null) {
-        replaceNamesWithUserInput(userEnteredName);
+    var nameSavedInChromeStorage = result["userEnteredName"];
+    if (nameSavedInChromeStorage != null) {
+        replaceNamesWithUserInput(nameSavedInChromeStorage.toString());
     }
 });
 
 function replaceNamesWithUserInput(userEnteredName) {
     var elements = document.getElementsByTagName('*');
-    var cachedNameMatches = new Array();
+    var cachedFoundNames = new Array();
 
     for (var i = 0; i < elements.length; i++)
     {
@@ -28,7 +28,7 @@ function replaceNamesWithUserInput(userEnteredName) {
                 wordsInNode.forEach(function(value, key)
                 {
                       var firstLetter = value.replace(/[^\w\s]/gi, '').charAt(0).toLowerCase();
-                      if (cachedNameMatches.includes(value))
+                      if (cachedFoundNames.includes(value))
                       {
                           var replacedText = replaceText(value, userEnteredName);
                           node.replaceWith(document.createTextNode(replacedText));
@@ -37,7 +37,7 @@ function replaceNamesWithUserInput(userEnteredName) {
                       {
                           var replacedText = replaceText(value, userEnteredName);
                           node.replaceWith(document.createTextNode(replacedText));
-                          cachedNameMatches.push(value);
+                          cachedFoundNames.push(value);
                       }
                 });
             }
