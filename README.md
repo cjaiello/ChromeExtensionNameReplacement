@@ -1,5 +1,6 @@
 **How to Install in Chrome**
-* Download this repository
+* Download ZIP of this repository and unzip it
+![Download Zip](/images/download-zip.png)
 
 * Go to the Extensions tab in chrome and click "Load unpacked":
 ![Extensions Tab](/images/extensions-tab.png)
