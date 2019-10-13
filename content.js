@@ -2,26 +2,16 @@
 // Thank you Tom Maxwell for the starter code!
 // https://9to5google.com/2015/06/14/how-to-make-a-chrome-extensions/
 
-const TEXT_NODE_VALUE = 3;
-
 chrome.storage.sync.get(['userEnteredName'], function(result) {
     var userEnteredName = result["userEnteredName"] != null ? result["userEnteredName"].toString() : null;
-    if (userEnteredName == null) {
-        var userInput = prompt("Enter a name, and all people's names in Chrome will be replaced with that name!");
-        userEnteredName = String(userInput);
-        chrome.storage.sync.set({"userEnteredName": userEnteredName}, function(userEnteredName) {
-            if (userEnteredName != null) {
-                replaceNamesWithUserInput(userEnteredName);
-            }
-        });
-    } else {
+    if (userEnteredName != null) {
         replaceNamesWithUserInput(userEnteredName);
     }
 });
 
 function replaceNamesWithUserInput(userEnteredName) {
     var elements = document.getElementsByTagName('*');
-    var matchedNames = new Array();
+    var cachedNameMatches = new Array();
 
     for (var i = 0; i < elements.length; i++)
     {
@@ -30,15 +20,15 @@ function replaceNamesWithUserInput(userEnteredName) {
         for (var j = 0; j < element.childNodes.length; j++)
         {
             var node = element.childNodes[j];
-            if (node.nodeType === TEXT_NODE_VALUE)
+            if (node.nodeType === 3)
             {
                 var text = node.nodeValue;
                 var wordsInNode = text.split(" ");
 
-                $.each(wordsInNode, function(key, value)
+                wordsInNode.forEach(function(value, key)
                 {
                       var firstLetter = value.replace(/[^\w\s]/gi, '').charAt(0).toLowerCase();
-                      if (matchedNames.includes(value))
+                      if (cachedNameMatches.includes(value))
                       {
                           var replacedText = replaceText(value, userEnteredName);
                           node.replaceWith(document.createTextNode(replacedText));
@@ -47,7 +37,7 @@ function replaceNamesWithUserInput(userEnteredName) {
                       {
                           var replacedText = replaceText(value, userEnteredName);
                           node.replaceWith(document.createTextNode(replacedText));
-                          matchedNames.push(value);
+                          cachedNameMatches.push(value);
                       }
                 });
             }

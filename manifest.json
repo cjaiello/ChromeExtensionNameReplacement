@@ -8,16 +8,30 @@
             "matches": [
                 "*://*/*"
             ],
-            "js": [ "jquery-3.3.1.min.js", "names.js", "content.js"],
+            "js": [
+              "jquery-3.3.1.min.js",
+              "names.js",
+              "content.js",
+              "popup.js"
+            ],
             "run_at": "document_end"
         }
     ],
+    "background": {
+        "scripts": [
+            "clearSetName.js",
+            "getNewName.js"
+        ],
+        "persistent": false
+    },
     "permissions": [
-          "storage"
+          "storage",
+          "*://*/*",
+          "tabs"
     ],
-    "page_action":
+    "browser_action":
       {
-        "default_popup": "test.html",
+        "default_popup": "popup.html",
         "default_title": "Chadification"
       }
 }
