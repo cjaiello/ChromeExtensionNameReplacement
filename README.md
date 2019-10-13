@@ -1,13 +1,22 @@
 **How to Install in Chrome**
 * Download this repository
 
-* ![Extensions Tab](/images/extensions-tab.png)
-Go to the Extensions tab in chrome and click "Load unpacked"
+* Go to the Extensions tab in chrome and click "Load unpacked":
+![Extensions Tab](/images/extensions-tab.png)
 
 
-* ![Choosing Folder](/images/choosing-folder.png)
-Choose the folder for this Repo
+* Choose the folder for this Repo:
+![Choosing Folder](/images/choosing-folder.png)
 
 
-* ![Ensuring Extension Is On](/images/ensuring-extension-is-on.png)
-Make sure the blue dot in the "on/off" switch is to the right, meaning the extension is on
+* Make sure the blue dot in the "on/off" switch is to the right, meaning the extension is on:
+![Ensuring Extension Is On](/images/ensuring-extension-is-on.png)
+
+**How to Use**
+
+* Click the 'C' icon in the top right corner of Chrome:
+![Click Icon](/images/click-icon.png)
+
+
+* Click the left button to set a new name or the right button to clear whatever name you've set:
+![Buttons In Popup](/images/buttons-in-popup.png)
