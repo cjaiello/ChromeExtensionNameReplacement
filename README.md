@@ -21,3 +21,5 @@
 
 * Click the left button to set a new name or the right button to clear whatever name you've set:
 ![Buttons In Popup](/images/buttons-in-popup.png)
+
+* If you don't see your name changes applying, refresh the page.
