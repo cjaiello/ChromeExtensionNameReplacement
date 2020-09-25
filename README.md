@@ -1,25 +1,13 @@
-**How to Install in Chrome**
+# Chrome Extension for Name Replacement
+By Christina
+
+## Technologies
+JavaScript
+
+## How to Install and Use
 * Download ZIP of this repository and unzip it
 ![Download Zip](/images/download-zip.png)
-
-* Go to the Extensions tab in chrome and click "Load unpacked":
-![Extensions Tab](/images/extensions-tab.png)
-
-
+* Go to the Extensions tab in chrome and click "Load unpacked"
 * Choose the folder for this Repo:
-![Choosing Folder](/images/choosing-folder.png)
-
-
-* Make sure the blue dot in the "on/off" switch is to the right, meaning the extension is on:
-![Ensuring Extension Is On](/images/ensuring-extension-is-on.png)
-
-**How to Use**
-
-* Click the 'C' icon in the top right corner of Chrome:
-![Click Icon](/images/click-icon.png)
-
-
-* Click the left button to set a new name or the right button to clear whatever name you've set:
-![Buttons In Popup](/images/buttons-in-popup.png)
-
-* If you don't see your name changes applying, refresh the page.
+* Make sure the blue dot in the "on/off" switch is to the right, meaning the extension is on
+![How to Install](/images/name-replacement-demo.gif)
