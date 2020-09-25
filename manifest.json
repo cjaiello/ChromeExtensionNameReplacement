@@ -1,7 +1,7 @@
 {
 "manifest_version": 2,
-    "name": "Chadification",
-    "description": "Chadification",
+    "name": "Name Replacement",
+    "description": "Name Replacement",
     "version": "1.0",
     "content_scripts": [
         {
@@ -32,6 +32,6 @@
     "browser_action":
       {
         "default_popup": "popup.html",
-        "default_title": "Chadification"
+        "default_title": "Name Replacement"
       }
 }

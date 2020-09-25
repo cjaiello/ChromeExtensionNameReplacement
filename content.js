@@ -10,6 +10,7 @@ chrome.storage.sync.get(['userEnteredName'], function(result) {
 });
 
 function replaceNamesWithUserInput(userEnteredName) {
+    console.log("\n\nStarting Name-Replacement Extension's replace method\n\n")
     var elements = document.getElementsByTagName('*');
     var cachedFoundNames = new Array();
 
@@ -25,27 +26,34 @@ function replaceNamesWithUserInput(userEnteredName) {
                 var text = node.nodeValue;
                 var wordsInNode = text.split(" ");
 
-                wordsInNode.forEach(function(value, key)
+                wordsInNode.forEach(function(value)
                 {
-                      var firstLetter = value.replace(/[^\w\s]/gi, '').charAt(0).toLowerCase();
-                      if (cachedFoundNames.includes(value))
-                      {
-                          var replacedText = replaceText(value, userEnteredName);
-                          node.replaceWith(document.createTextNode(replacedText));
-                      }
-                      else if (firstLetter in nameData && nameData[firstLetter].includes(value))
-                      {
-                          var replacedText = replaceText(value, userEnteredName);
-                          node.replaceWith(document.createTextNode(replacedText));
-                          cachedFoundNames.push(value);
-                      }
+                    text = node.nodeValue;
+                    var firstLetter = value.replace(/[^\w\s]/gi, '').charAt(0).toLowerCase();
+                    if (cachedFoundNames.includes(value))
+                    {
+                        //console.log("\n\nCached word to replace is: " + value + "\n\n");
+                        var replacedText = replaceText(text, value, userEnteredName);
+                        node.replaceWith(document.createTextNode(replacedText));
+                    }
+                    else if (firstLetter in nameData && nameData[firstLetter].includes(value))
+                    {
+                        //console.log("\n\nWord to replace is: " + value + "\n\n");
+                        var replacedText = replaceText(text, value, userEnteredName);
+                        node.replaceWith(document.createTextNode(replacedText));
+                        cachedFoundNames.push(value);
+                    }
                 });
             }
         }
     }
+    console.log("\n\nFinished Name-Replacement Extension's replace method\n\n")
 }
 
-function replaceText(value, userEnteredName) {
-    var re = new RegExp("\\b" + value + "\\b");
-    return value.replace(re, userEnteredName);
+function replaceText(text, value, userEnteredName) {
+    console.log("\n\n\nValue, the name to replace, is: " + value);
+    console.log("UserEnteredName is: " + userEnteredName);
+    var updatedText = text.replace(value, userEnteredName);
+    console.log("Updated text: " + updatedText + "\n\n\n")
+    return updatedText;
 }
