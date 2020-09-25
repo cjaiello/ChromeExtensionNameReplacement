@@ -5,7 +5,7 @@ By Christina
 JavaScript
 
 ## How to Install and Use
-* Download ZIP of this repository and unzip it
+* Download ZIP of this repository and unzip it, or do a `git clone` of this repository
 ![Download Zip](/images/download-zip.png)
 * Go to the Extensions tab in chrome and click "Load unpacked"
 * Choose the folder for this Repo:
