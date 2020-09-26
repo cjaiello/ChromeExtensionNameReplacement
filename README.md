@@ -1,4 +1,4 @@
-# Chrome Extension for Name Replacement
+# Chrome Extension for SpongeBob Replacement
 By Christina
 
 ## Technologies
@@ -11,3 +11,5 @@ JavaScript
 * Choose the folder for this repostitory
 * Make sure the blue dot in the "on/off" switch is to the right, meaning the extension is on
 ![How to Install](/images/name-replacement-demo.gif)
+* To change name, click the app's icon (pin it to Chrome's toolbar if you haven't yet).
+![Download Zip](/images/change-name.png)
