@@ -1,4 +1,4 @@
-# Chrome Extension for SpongeBob Replacement
+# Chrome Extension for Name Replacement
 By Christina
 
 ## Technologies
