@@ -13,3 +13,8 @@ JavaScript
 ![How to Install](/images/name-replacement-demo.gif)
 * To change name, click the app's icon (pin it to Chrome's toolbar if you haven't yet).
 ![Download Zip](/images/change-name.png)
+
+Names courtesy of:
+* https://github.com/avikj
+* https://github.com/hadley
+* https://gist.github.com/mbejda
