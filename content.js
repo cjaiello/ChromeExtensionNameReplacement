@@ -25,23 +25,23 @@ function replaceNamesWithUserInput(userEnteredName) {
             {
                 var text = node.nodeValue;
                 var wordsInNode = text.split(" ");
-
                 wordsInNode.forEach(function(value)
                 {
-                    text = node.nodeValue;
                     var firstLetter = value.replace(/[^\w\s]/gi, '').charAt(0).toLowerCase();
                     if (cachedFoundNames.includes(value))
                     {
+                        console.log("First If")
                         var replacedText = replaceText(text, value, userEnteredName);
-                        node.replaceWith(document.createTextNode(replacedText));
+                        text = replacedText;
                     }
                     else if (firstLetter in nameData && nameData[firstLetter].includes(value))
                     {
                         var replacedText = replaceText(text, value, userEnteredName);
-                        node.replaceWith(document.createTextNode(replacedText));
+                        text = replacedText;
                         cachedFoundNames.push(value);
                     }
                 });
+                node.replaceWith(document.createTextNode(text));
             }
         }
     }
