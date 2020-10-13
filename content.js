@@ -13,11 +13,11 @@ function replaceNamesWithUserInput(userEnteredName) {
     console.log("Starting Name-Replacement Extension's replace method")
     var elements = document.getElementsByTagName('*');
     var cachedFoundNames = new Array();
-
+    
     for (var i = 0; i < elements.length; i++)
     {
         var element = elements[i];
-
+    
         for (var j = 0; j < element.childNodes.length; j++)
         {
             var node = element.childNodes[j];
@@ -25,7 +25,6 @@ function replaceNamesWithUserInput(userEnteredName) {
             {
                 var text = node.nodeValue;
                 var wordsInNode = text.split(" ");
-
                 wordsInNode.forEach(function(value)
                 {
                     text = node.nodeValue;
@@ -33,12 +32,12 @@ function replaceNamesWithUserInput(userEnteredName) {
                     if (cachedFoundNames.includes(value))
                     {
                         var replacedText = replaceText(text, value, userEnteredName);
-                        node.replaceWith(document.createTextNode(replacedText));
+                        node.nodeValue = replacedText;
                     }
                     else if (firstLetter in nameData && nameData[firstLetter].includes(value))
                     {
                         var replacedText = replaceText(text, value, userEnteredName);
-                        node.replaceWith(document.createTextNode(replacedText));
+                        node.nodeValue = replacedText;
                         cachedFoundNames.push(value);
                     }
                 });
@@ -47,7 +46,7 @@ function replaceNamesWithUserInput(userEnteredName) {
     }
     console.log("Finished Name-Replacement Extension's replace method")
 }
-
+    
 function replaceText(text, value, userEnteredName) {
     console.log("Value, the name to replace, is: " + value);
     console.log("UserEnteredName is: " + userEnteredName);
