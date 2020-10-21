@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 function getNewName() {
   chrome.tabs.executeScript({
     file: 'getNewName.js'
@@ -22,3 +23,4 @@ function clearSetName() {
 
 document.getElementById('setNewName').addEventListener('click', getNewName);
 document.getElementById('clearSetName').addEventListener('click', clearSetName);
+});
