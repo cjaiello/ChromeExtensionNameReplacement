@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 function getNewName() {
   chrome.tabs.executeScript({
     file: 'getNewName.js'
